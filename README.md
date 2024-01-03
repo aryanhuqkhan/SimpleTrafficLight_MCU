@@ -31,7 +31,9 @@ Design and program traffic light behavior. The traffic lightmodel goes through a
 "light" is a flag variable that indicates which color the LED is. light = 0 for Green, light = 1 for Yellow and light = 2 for Red.
 Down below shows the modelling of the FSM that was used to code the program.
 
-<img width="500" alt="Screen Shot 2023-12-31 at 3 46 12 AM" src="https://github.com/aryanhuqkhan/SimpleTrafficLight_MCU/assets/146489368/6b5d0024-f78b-4a81-a19f-56a029920db4">
+![Screen Shot 2024-01-03 at 3 40 49 PM](https://github.com/aryanhuqkhan/SimpleTrafficLight_MCU/assets/146489368/0ec25636-fcd7-40e1-84ba-05b14ff060da)
+
+while the LED OFF STATE is active 
 
 ### Example Code
 
