@@ -3,7 +3,7 @@
 // Computer Systems Engineering
 // Last Modified : Tue Jan 2 11:22pm
 
-//#include "msp.h"
+#include "msp.h"
 #include <stdbool.h>
 #include <stdint.h>
 #define CCR0 8192
