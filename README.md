@@ -47,6 +47,8 @@ Asumption: No time is passed when trasitioning from LED OFF state to any Colored
 
 ## Code:
 
+### CRR0 register
+
 CRR0's value is the number of cycles needed to cause an interrupt
 
 CRR0 calculation:
@@ -66,17 +68,15 @@ thus, 8192 cycles-> 8192 * 1 cycle = 8192 * (1 / 8192)
 ```
 #define CCR0 8192
 
-TA0CTL |= (uint16_t)(1<<8); 
-TA0CTL &= (uint16_t)(~(1<<9));
-TA0CTL |= (uint16_t)(1<<7); // setting clk source 32.768 Hz
-TA0CTL &=(uint16_t)(~(1<<6)); // setting clk source 32.768 Hz
-TA0CTL &= (uint16_t)(~(1<<0)); 
-TA0CCR0 =(uint16_t) (CCR0)
-TA0CTL |= (uint16_t)((1<<4));
+TA0CTL |= (uint16_t)(1<<8); // setting clk source 32.768 Hz
+TA0CTL &= (uint16_t)(~(1<<9)); // setting clk source 32.768 Hz
+TA0CTL |= (uint16_t)(1<<7); //setting divder to 1/4
+TA0CTL &=(uint16_t)(~(1<<6)); //setting divder to 1/4
+TA0CCR0 =(uint16_t) (CCR0) * 5 // setting to 5 seconds
 ```
 
 
-
+### CRR0 register
 
 
 
