@@ -76,7 +76,9 @@ TA0CCR0 =(uint16_t) (CCR0) * 5 // setting to 5 seconds
 ```
 
 
-### CRR0 register
+### P2OUT control register
+
+P2OUT's pin 0, 1, 2 are configured to RGB LED
 
 
 
