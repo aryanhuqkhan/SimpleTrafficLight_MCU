@@ -52,8 +52,21 @@ CRR0's value is the number of cycles needed to cause an interrupt
 CRR0 calculation:
 
 Source Clock: 32768 Hz
+
 Clock divider = 1/4
-Source Clock after being divided: 8192
+
+Source Clock after being divided: 8192 Hz
+
+CRR0 value is choose to be 8192 so that (1*CRR0) = 1 second
+
+Clock speed =  8192 Hz -> 1 cycle = 1 / 8192 seconds
+
+thus, 8192 cycles-> 8192 * 1 cycle = 8192 * (1 / 8192)
+
+```
+
+
+
 
 
 
