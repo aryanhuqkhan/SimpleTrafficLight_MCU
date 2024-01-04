@@ -80,6 +80,10 @@ TA0CCR0 =(uint16_t) (CCR0) * 5 // setting to 5 seconds
 
 P2OUT's pin 0, 1, 2 are configured to RGB LED
 
+by changing the bit values in these 3 pins you are able to make 7 colors. And Colors green, 
+yellow and red are included in the 7 colors. the bit value are :
+- Green 
+
 
 
 
