@@ -29,6 +29,15 @@ void TA0_N_IRQHandler(void) {
 int main(){
     
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD; // Disabling the watchdog timer
+
+    //LED config
+    P2SEL0 &=(uint8_t)(~((1<<2) | (1<<1) | (1<<0))); //choosen as GPIO SEL0 clear 0, 1, 2
+    P2SEL1 &=(uint8_t)(~((1<<2) | (1<<1) | (1<<0))); //choosen as GPIO SEL1 clear 0, 1, 2
+
+    P2DIR |=(uint8_t)(((1<<2) | (1<<1) | (1<<0))); // choose in the output direction
+
+    P2OUT &=~(uint8_t)(((1<<2) | (1<<1) | (1<<0))); // LED off code
+    
     
     //timer config
     TA0CTL &= (uint16_t)(~((1<<5) | (1<<4)));  //stop timer
