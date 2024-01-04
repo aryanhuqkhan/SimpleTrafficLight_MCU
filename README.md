@@ -35,7 +35,10 @@ Down below shows the modelling of the FSM that was used to code the program.
 
 The LED OFF state represents 2 things:
 - The LED OFF when transitioning from one colored state to another colored is LED is off
-- The color changes in the LED can only go in this sequence: Green->Yellow->Red->Green->Yelow->Red and the cycle goes on. The logic representation
+- The color changes in the LED can only go in this sequence: Green->Yellow->Red->Green->Yelow->Red and the cycle goes on. The logic representation is shown below:
+  ```
+  light = (light++)%2
+  ```
 
 The Colored states transition to LED OFF state after t seconds (Green t = 5, Yellow t = 1, Red t = 3)
 
