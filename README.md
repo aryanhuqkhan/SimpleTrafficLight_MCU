@@ -47,7 +47,9 @@ Asumption: No time is passed when trasitioning from LED OFF state to any Colored
 
 ## Code:
 
-### CRR0 register
+### CRR0 register and CTL register
+
+CTL register is the Timer's control register, to control counting mode, choosing source clk, enabling interrupt and more.
 
 CRR0's value is the number of cycles needed to cause an interrupt
 
@@ -72,7 +74,7 @@ TA0CTL |= (uint16_t)(1<<8); // setting clk source 32.768 Hz
 TA0CTL &= (uint16_t)(~(1<<9)); // setting clk source 32.768 Hz
 TA0CTL |= (uint16_t)(1<<7); //setting divder to 1/4
 TA0CTL &=(uint16_t)(~(1<<6)); //setting divder to 1/4
-TA0CCR0 =(uint16_t) (CCR0) * 5 // setting to 5 seconds
+TA0CCR0 =(uint16_t) (((CCR0) * 5 )-1)// setting to 5 seconds
 ```
 
 
@@ -87,12 +89,18 @@ yellow and red are included in the 7 colors. the bit value are :
 - Red 001
 
 ```
+ P2OUT |= (uint8_t)((1<<1)); // green
+ P2OUT |= (uint8_t)((1<<0)|(1<<1)); // yellow
+ P2OUT |= (uint8_t)((1<<0)|(1<<0)); // red
+```
 
-  
+### Timer ISR
+
+Is it is the timer's interrupt serivce routine. It executes when there is an interrupted caused in the timer. Thus it happens when
+CCR0 value is reached
 
 
-
-
+```
 
 
 
