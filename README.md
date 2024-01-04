@@ -45,7 +45,7 @@ The Colored states transition to LED OFF state after t seconds (Green t = 5, Yel
 Asumption: No time is passed when trasitioning from LED OFF state to any Colored state. 
 
 
-## Code
+## Code:
 
 CRR0's value is the number of cycles needed to cause an interrupt
 
