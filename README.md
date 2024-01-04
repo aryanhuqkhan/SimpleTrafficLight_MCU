@@ -97,10 +97,38 @@ yellow and red are included in the 7 colors. the bit value are :
 ### Timer ISR
 
 Is it is the timer's interrupt serivce routine. It executes when there is an interrupted caused in the timer. Thus it happens when
-CCR0 value is reached
+CCR0 value is reached.
 
+The function of this ISR is set flags (to change colors) and change the CCR0 value to cause interrupts at differents intervals (after 5s, after 1s, after 3s). The changing of colors is done in the main program to spend less as possible time in the ISR.
+```
+void TA0_N_IRQHandler(void) {
+    extern int light;
+    TA0CTL &= (uint16_t)(~(1<<0));   //Clearing Interrupt Flag
+    if  (light == 0){
+        TA0CCR0 = CCR0;             //Setting CCRO so Interrupt will be generated after 1s
+        light = 1;
+    }
+    else if (light == 1){
+        TA0CCR0 = CCR0 * 3;             //Setting CCRO so Interrupt will be generated after 3s
+        light = 2;
+    }
+    else if (light == 2){
+        TA0CCR0 = CCR0 * 5;             //Setting CCRO so Interrupt will be generated after 5s
+        light = 0;
+    }
+}
 
 ```
+Note: Whenever the timer ISR is called we must immediately clear the Interrupt flag. This should be done in all Timer ISRs.
+
+More info about the Register in can be found in the MSP432P4xx Technical Reference Manual
+
+## Additional Reasources:
+
+Tutorial to set up the MCU in Keil: https://www.youtube.com/watch?v=u5SrhXUHYu4&ab_channel=EasyElectric
+
+
+
 
 
 
