@@ -34,7 +34,8 @@ int main(){
     TA0CTL &= (uint16_t)(~((1<<5) | (1<<4)));  //stop timer
     TA0CTL |= (uint16_t)(1<<8);                //choosing clk source set bit 8
     TA0CTL &= (uint16_t)(~(1<<9));             //choosing clk source clear bit 9
-    TA0CTL |= (uint16_t)((1<<7)|(1<<6));       // diving the clock by 8
+    TA0CTL |= (uint16_t)(1<<7);                // diving the clock by 4 set bit 7
+    TA0CTL &=(uint16_t)(~(1<<6));              // diving the clock by 4 clear bit 6
     TA0CTL &= (uint16_t)(~(1<<0));             // clear interrupt flag
     TA0CCR0 =(uint16_t) (CCR0 * 5);
     TA0CTL |= (uint16_t)((1<<1));              // interrupt enable
