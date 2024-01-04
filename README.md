@@ -9,9 +9,8 @@ timers, as well as designing the system using extended FSM (Finite State Manchin
 
 - Prerequisites 
 - Getting Started
-- Lab Instructions
+- Instructions
 - Additional Resources
-- License
 
 ## Prerequisites
 
