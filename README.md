@@ -34,11 +34,12 @@ Down below shows the modelling of the FSM that was used to code the program.
 ![Screen Shot 2024-01-03 at 3 40 49 PM](https://github.com/aryanhuqkhan/SimpleTrafficLight_MCU/assets/146489368/0ec25636-fcd7-40e1-84ba-05b14ff060da)
 
 The LED OFF state represents 2 things:
-- The LED OFF
--
+- The LED OFF when transitioning from one colored state to another colored is LED is off
+- The color changes in the LED can only go in this sequence: Green->Yellow->Red->Green->Yelow->Red and the cycle goes on. The logic representation
 
 The Colored states transition to LED OFF state after t seconds (Green t = 5, Yellow t = 1, Red t = 3)
-Asumption: No time is passed when trasitioning from LED OFF state to any Colored state
+
+Asumption: No time is passed when trasitioning from LED OFF state to any Colored state. 
 
 
 
