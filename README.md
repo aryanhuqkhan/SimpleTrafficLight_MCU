@@ -124,7 +124,7 @@ More info about the Register in can be found in the MSP432P4xx Technical Referen
 
 ## Additional Reasources:
 
-Tutorial to set up the MCU in Keil: https://www.youtube.com/watch?v=u5SrhXUHYu4&ab_channel=EasyElectric
+Tutorial to set up the MCU in Keil IDE: https://www.youtube.com/watch?v=u5SrhXUHYu4&ab_channel=EasyElectric
 
 
 
